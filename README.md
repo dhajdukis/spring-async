@@ -33,9 +33,9 @@ SELECT 0,'TODO' from generate_series(1,100);
 ```
 
 ## 3. Details
-This application creates a H2 in-memory database. The scheduler collects all data rows with 'TODO' state in every minute, 
+This application creates an H2 in-memory database. The scheduler collects all data rows with 'TODO' state in every minute, 
 changes their state to 'DONE' in 8 thread, all in separate transactions. If there is an exception during the process, it throws a 
-custom AsyncException, and increases the value of the COUNTER row by 1.
+custom AsyncException (to propagate the exception to the caller thread), and increases the value of the COUNTER row by 1.
 
 ### Authors
 Daniel Hajdu-Kis - dhajdukis
