@@ -16,8 +16,8 @@ class AsyncService(private val dataRepository: DataRepository) {
     @Async("executor1")
     fun asyncProcessor(id: Long) {
         val data = dataRepository.findOneById(id)
-        data.checkCounter()
         try {
+            data.checkCounter()
             logger.info("Changing data state. Id: $id")
             data.changeState(State.DONE)
         } catch (ex: Exception) {
