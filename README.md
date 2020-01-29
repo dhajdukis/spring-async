@@ -8,9 +8,9 @@ and separate database transactions.
 
 Kotlin 1.3.61
 
-Gradle 5.5
+Gradle 6.0.1
 
-Spring Boot 2.2.2
+Spring Boot 2.2.4
 
 H2 database 1.4.200
 
