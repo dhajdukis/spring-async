@@ -15,11 +15,11 @@ import java.util.concurrent.Executors
 @Configuration
 @EnableAsync
 class AsyncConfig(
-        @Value("\${scheduler.executor1-pool-size}") val signPoolSize: String
+        @Value("\${scheduler.executor1-pool-size}") val poolSize: String
 ) : AsyncConfigurer {
 
     @Bean(name = ["executor1"])
-    override fun getAsyncExecutor(): Executor = Executors.newScheduledThreadPool(Integer.valueOf(signPoolSize))
+    override fun getAsyncExecutor(): Executor = Executors.newScheduledThreadPool(Integer.valueOf(poolSize))
 
     override fun getAsyncUncaughtExceptionHandler(): AsyncUncaughtExceptionHandler? = AsyncExceptionHandler()
 }
